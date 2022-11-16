@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">FRANCISCO_VERDUGO</string>
+    <string name="send">send</string>
+    <string name="message">message</string>
+    <string name="subject">subject</string>
+    <string name="to">to</string>
+</resources>
