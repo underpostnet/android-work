@@ -14,6 +14,7 @@
         tools:ignore="MissingConstraints">
 
         <include layout="@layout/form" />
+        <include layout="@layout/menu" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
