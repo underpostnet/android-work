@@ -15,6 +15,11 @@
         tools:ignore="MissingConstraints">
 
         <include layout="@layout/formula1_list" />
+
+        <ListView
+            android:id="@+id/formula1_list_view_adapter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
         
 <!--
      

@@ -2,6 +2,7 @@ package com.example.francisco_verdugo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,13 +13,28 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.francisco_verdugo.Formula1Item.Formula1ItemAdapter;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-
     protected ListView listview;
     private final ArrayList<String> names = new ArrayList<>();
+
+    ListView list;
+
+    String[] mainTitle = {
+            "Mercedes", "Alpine", "Haas"
+    };
+    String[] subtitle = {
+            "Mercedes", "Alpine", "Haas"
+    };
+    int[] imagesId = {
+        R.drawable.mercedes,
+        R.drawable.alpine,
+        R.drawable.haas
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("INFO", "onCreate MainActivity");
 
         this.renderFormula1List();
-
-
+        this.renderFormula1ListAdapter();
         // ComponentMenu menuInstance = new ComponentMenu();
 
         Button buttonMainActivity = findViewById(R.id.menu_btn_activity_main);
@@ -50,14 +65,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-    private void renderFormula1List(){
+    private void renderFormula1List() {
         this.listview = findViewById(R.id.formula1_list_view);
         this.names.add("Mercedes");
         this.names.add("Alpine");
         this.names.add("Haas");
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.formula1_list, R.id.formula1_list_view_text, names);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.formula1_list, R.id.formula1_list_view_text,
+                names);
         this.listview.setAdapter(adapter);
+    }
+
+    private void renderFormula1ListAdapter() {
+        Formula1ItemAdapter adapter = new Formula1ItemAdapter(this, mainTitle, subtitle, imagesId);
+        list = findViewById(R.id.formula1_list_view_adapter);
+        list.setAdapter(adapter);
     }
 
     @Override
@@ -68,13 +89,16 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
             case R.id.add_item_formula1_list:
-            Log.i("INFO", "add_item_formula1_list");
+                Log.i("INFO", "add_item_formula1_list");
                 return true;
+            case 0:
+                return false;
             default:
                 return super.onOptionsItemSelected(item);
         }
