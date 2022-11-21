@@ -5,19 +5,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    protected ListView listview;
+    private final ArrayList<String> names = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Log.i("INFO", "onCreate MainActivity");
+
+        this.renderFormula1List();
+
+
         // ComponentMenu menuInstance = new ComponentMenu();
 
-        Button buttonMainActivity = (Button) findViewById(R.id.menu_btn_activity_main);
-        Button buttonMainActivity0 = (Button) findViewById(R.id.menu_btn_activity_main_0);
+        Button buttonMainActivity = findViewById(R.id.menu_btn_activity_main);
+        Button buttonMainActivity0 = findViewById(R.id.menu_btn_activity_main_0);
 
         buttonMainActivity.setOnClickListener(v -> {
             // Do something in response to button click}
@@ -33,5 +45,15 @@ public class MainActivity extends AppCompatActivity {
 
         // menuInstance.initBtnMenuEvent(buttonMainActivity, buttonMainActivity0);
 
+    }
+
+
+    private void renderFormula1List(){
+        this.listview = findViewById(R.id.formula1_list_view);
+        this.names.add("Mercedes");
+        this.names.add("Alpine");
+        this.names.add("Haas");
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.formula1_list, R.id.formula1_list_view_text, names);
+        this.listview.setAdapter(adapter);
     }
 }

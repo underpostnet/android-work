@@ -15,8 +15,8 @@ public class MainActivity0 extends AppCompatActivity {
         setContentView(R.layout.activity_main0);
         Log.i("INFO", "onCreate MainActivity0");
 
-        Button buttonMainActivity = (Button) findViewById(R.id.menu_btn_activity_main);
-        Button buttonMainActivity0 = (Button) findViewById(R.id.menu_btn_activity_main_0);
+        Button buttonMainActivity = findViewById(R.id.menu_btn_activity_main);
+        Button buttonMainActivity0 = findViewById(R.id.menu_btn_activity_main_0);
 
         buttonMainActivity.setOnClickListener(v -> {
             // Do something in response to button click}
