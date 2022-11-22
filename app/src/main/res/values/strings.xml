@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">FRANCISCO_VERDUGO</string>
     <string name="send">send</string>
-    <string name="message">message</string>
-    <string name="subject">subject</string>
-    <string name="to">to</string>
+    <string name="message">Nombre Escuderia</string>
+    <string name="subject">Descripción</string>
+    <string name="to">Imagen</string>
     <string name="activity_main">activity main</string>
     <string name="activity_main_0">activity main 0</string>
     <string name="add_item_formula1_list">Añadir Escuderia</string>

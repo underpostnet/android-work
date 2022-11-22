@@ -79,6 +79,21 @@ public class MainActivity extends AppCompatActivity {
         Formula1ItemAdapter adapter = new Formula1ItemAdapter(this, mainTitle, subtitle, imagesId);
         list = findViewById(R.id.formula1_list_view_adapter);
         list.setAdapter(adapter);
+
+
+
+        list.setOnItemClickListener((parent, view, position, id) -> {
+            // TODO Auto-generated method stub
+            Log.i("INFO", "Formula1ItemAdapter.setOnItemClickListener -> id:"+id);
+
+            Intent intent = new Intent(MainActivity.this, MainActivity0.class);
+            intent.putExtra("title", mainTitle[(int)id]);
+            intent.putExtra("imageid", imagesId[(int)id]);
+            intent.putExtra("subtitle", subtitle[(int)id]);
+            startActivity(intent);
+
+
+        });
     }
 
     @Override
@@ -96,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.add_item_formula1_list:
                 Log.i("INFO", "add_item_formula1_list");
+                Intent intent = new Intent(MainActivity.this, MainActivity0.class);
+                startActivity(intent);
                 return true;
             case 0:
                 return false;

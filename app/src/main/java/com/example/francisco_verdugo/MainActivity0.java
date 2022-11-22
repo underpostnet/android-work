@@ -14,6 +14,11 @@ public class MainActivity0 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main0);
         Log.i("INFO", "onCreate MainActivity0");
+        Log.i("INFO", "onCreate title: "+getIntent().getStringExtra("title"));
+        Log.i("INFO", "onCreate subtitle: "+getIntent().getStringExtra("subtitle"));
+        int idImage = getIntent().getIntExtra("imageid", 0);
+        Log.i("INFO", "onCreate imageid: "+idImage);
+
 
         Button buttonMainActivity = findViewById(R.id.menu_btn_activity_main);
         Button buttonMainActivity0 = findViewById(R.id.menu_btn_activity_main_0);
