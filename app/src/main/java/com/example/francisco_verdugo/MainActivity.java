@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.francisco_verdugo.Formula1Item.Formula1ItemAdapter;
+import com.example.francisco_verdugo.ListAdapter.ListAdapter;
 
 import java.util.ArrayList;
 
@@ -42,49 +42,67 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.i("INFO", "onCreate MainActivity");
 
-        this.renderFormula1List();
-        this.renderFormula1ListAdapter();
+
+        Button menu_adm_capture = findViewById(R.id.menu_adm_capture);
+        Button menu_adm_list = findViewById(R.id.menu_adm_list);
+        Button menu_adm_gfx = findViewById(R.id.menu_adm_gfx);
+
+        menu_adm_capture.setOnClickListener(v -> {
+            // Do something in response to button click}
+            Log.i("INFO", "menu_adm_capture.setOnClickListener");
+        });
+        menu_adm_list.setOnClickListener(v -> {
+            // Do something in response to button click}
+            Log.i("INFO", "menu_adm_list.setOnClickListener");
+        });
+        menu_adm_gfx.setOnClickListener(v -> {
+            // Do something in response to button click}
+            Log.i("INFO", "menu_adm_gfx.setOnClickListener");
+        });
+
+        // this.renderList();
+        this.renderListAdapter();
         // ComponentMenu menuInstance = new ComponentMenu();
 
-        Button buttonMainActivity = findViewById(R.id.menu_btn_activity_main);
-        Button buttonMainActivity0 = findViewById(R.id.menu_btn_activity_main_0);
+        // Button buttonMainActivity = findViewById(R.id.menu_btn_activity_main);
+        // Button buttonMainActivity0 = findViewById(R.id.menu_btn_activity_main_0);
 
-        buttonMainActivity.setOnClickListener(v -> {
-            // Do something in response to button click}
-            Log.i("INFO", "buttonMainActivity.setOnClickListener");
-        });
+        // buttonMainActivity.setOnClickListener(v -> {
+        //     // Do something in response to button click}
+        //     Log.i("INFO", "buttonMainActivity.setOnClickListener");
+        // });
 
-        buttonMainActivity0.setOnClickListener(v -> {
-            // Do something in response to button click}
-            Log.i("INFO", "buttonMainActivity0.setOnClickListener");
-            Intent intent = new Intent(MainActivity.this, MainActivity0.class);
-            startActivity(intent);
-        });
+        // buttonMainActivity0.setOnClickListener(v -> {
+        //     // Do something in response to button click}
+        //     Log.i("INFO", "buttonMainActivity0.setOnClickListener");
+        //     Intent intent = new Intent(MainActivity.this, MainActivity0.class);
+        //     startActivity(intent);
+        // });
 
         // menuInstance.initBtnMenuEvent(buttonMainActivity, buttonMainActivity0);
 
     }
 
-    private void renderFormula1List() {
-        this.listview = findViewById(R.id.formula1_list_view);
-        this.names.add("Mercedes");
-        this.names.add("Alpine");
-        this.names.add("Haas");
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.formula1_list, R.id.formula1_list_view_text,
-                names);
-        this.listview.setAdapter(adapter);
-    }
+    // private void renderList() {
+    //     this.listview = findViewById(R.id.formula1_list_view);
+    //     this.names.add("Mercedes");
+    //     this.names.add("Alpine");
+    //     this.names.add("Haas");
+    //     ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.formula1_list, R.id.formula1_list_view_text,
+    //             names);
+    //     this.listview.setAdapter(adapter);
+    // }
 
-    private void renderFormula1ListAdapter() {
-        Formula1ItemAdapter adapter = new Formula1ItemAdapter(this, mainTitle, subtitle, imagesId);
-        list = findViewById(R.id.formula1_list_view_adapter);
+    private void renderListAdapter() {
+        ListAdapter adapter = new ListAdapter(this, mainTitle, subtitle, imagesId);
+        list = findViewById(R.id.list_view_adapter);
         list.setAdapter(adapter);
 
 
 
         list.setOnItemClickListener((parent, view, position, id) -> {
             // TODO Auto-generated method stub
-            Log.i("INFO", "Formula1ItemAdapter.setOnItemClickListener -> id:"+id);
+            Log.i("INFO", "ListAdapter.setOnItemClickListener -> id:"+id);
 
             Intent intent = new Intent(MainActivity.this, MainActivity0.class);
             intent.putExtra("title", mainTitle[(int)id]);

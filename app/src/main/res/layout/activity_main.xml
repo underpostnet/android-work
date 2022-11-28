@@ -14,20 +14,29 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <include layout="@layout/formula1_list" />
+        <include layout="@layout/menu_adm_suprema" />
+
+        <ListView
+        android:id="@+id/list_view_adapter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+<!--
+     
+   <include layout="@layout/formula1_list" />
 
         <ListView
             android:id="@+id/formula1_list_view_adapter"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
         
-<!--
-     
--->
-
+    
         <include layout="@layout/a" />
         <include layout="@layout/b" />
         <include layout="@layout/menu" />
+
+-->
+
     </LinearLayout>
 
 
