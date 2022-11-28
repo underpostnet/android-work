@@ -50,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
         menu_adm_capture.setOnClickListener(v -> {
             // Do something in response to button click}
             Log.i("INFO", "menu_adm_capture.setOnClickListener");
+            Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+            startActivity(intent);
         });
         menu_adm_list.setOnClickListener(v -> {
             // Do something in response to button click}
