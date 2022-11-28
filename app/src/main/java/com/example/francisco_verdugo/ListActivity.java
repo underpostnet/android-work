@@ -2,6 +2,7 @@ package com.example.francisco_verdugo;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
@@ -44,8 +45,9 @@ public class ListActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
             Log.i("INFO", "ListAdapter.setOnItemClickListener -> id:"+id);
 
+            MediaPlayer mediaPlayer = MediaPlayer.create(this, R.raw.space);
+            mediaPlayer.start(); 
 
-            // sonido
 
             // Intent intent = new Intent(MainActivity.this, MainActivity0.class);
             // intent.putExtra("title", mainTitle[(int)id]);
