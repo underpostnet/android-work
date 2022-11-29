@@ -18,9 +18,9 @@ import java.util.ArrayList;
 
 public class GfxActivity extends AppCompatActivity {
     private BarChart barChart;
-    private String []month= new String[] {"Enero", "Febrero"};
-    private int []sale= new int[] {20, 40};
-    private int []colors= new int[] {Color.BLUE , Color.RED};
+    private String []month= new String[] {"Maria", "Juan"};
+    private int []sale= new int[] {60, 40};
+    private int []colors= new int[] {Color.GREEN, Color.YELLOW};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

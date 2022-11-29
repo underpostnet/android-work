@@ -14,11 +14,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:text="Listado de Conserjes" />  <!-- nombre foto cargo sonido -->
+        android:text="Listado de Conserjes" />
     <Button
         android:id="@+id/menu_adm_gfx"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:text="Grafico Conserjes" /> <!-- favoritos -->
+        android:text="Grafico Conserjes" />
 </LinearLayout>
