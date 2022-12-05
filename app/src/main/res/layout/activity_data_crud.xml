@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+   android:orientation="vertical" android:layout_width="match_parent"
+   android:layout_height="match_parent">
+
+   <TextView
+       android:id="@+id/textView2"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="DataFlair "
+       android:textColor="#a4c639"
+       android:layout_marginLeft="100dp"
+       android:textSize="50dp"
+       android:layout_centerHorizontal="true" />
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="50dp"
+       android:layout_marginTop="50dp"
+       android:text="Data Flair User" />
+
+   <EditText
+       android:id="@+id/txtName"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="50dp"
+       android:ems="10" />
+
+   <Button
+       android:id="@+id/btnAdd"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="50dp"
+       android:onClick="onClickAddDetails"
+       android:text="Add User" />
+
+   <Button
+       android:id="@+id/btnRetrieve"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="50dp"
+       android:onClick="onClickShowDetails"
+       android:text="Show Users" />
+
+   <TextView
+       android:id="@+id/res"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="50dp"
+       android:clickable="false"
+       android:ems="10" />
+</LinearLayout>

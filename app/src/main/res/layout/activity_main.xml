@@ -14,11 +14,12 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <include layout="@layout/menu_adm_suprema" />
-
-
+       
+        <include layout="@layout/activity_data_crud" />
 
 <!--
+
+     <include layout="@layout/menu_adm_suprema" />
      
    <include layout="@layout/formula1_list" />
 

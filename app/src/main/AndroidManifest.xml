@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.francisco_verdugo">
-
+    <!--
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    -->
 
     <application
         android:allowBackup="true"
@@ -15,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FRANCISCO_VERDUGO">
+        <!-- 
         <activity
             android:name=".GfxActivity"
             android:exported="false" />
@@ -42,6 +44,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+    -->
+        <activity android:name="com.example.francisco_verdugo.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <provider
+            android:authorities="com.dataflair.contentprovider.UserProvider"
+            android:name="com.example.francisco_verdugo.DataFlairProvider"></provider>
     </application>
 
 </manifest>
