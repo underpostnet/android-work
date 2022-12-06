@@ -18,7 +18,10 @@ public class DataFlairProvider extends ContentProvider {
    static final String URL = "content://" + PROVIDER_NAME + "/users";
    static final Uri CONTENT_URI = Uri.parse(URL);
    static final String id = "id";
-   static final String name = "name";
+   static final String patente = "patente";
+   static final String hora = "hora";
+   static final String fecha = "fecha";
+   static final String ubicacion = "ubicacion";
    static final int uriCode = 1;
    static final UriMatcher uriMatcher;
    private static HashMap<String, String> values;
@@ -104,12 +107,15 @@ public class DataFlairProvider extends ContentProvider {
        return count;
    }
    private SQLiteDatabase db;
-   static final String DATABASE_NAME = "EmpDB";
-   static final String TABLE_NAME = "Employees";
+   static final String DATABASE_NAME = "CarsDB";
+   static final String TABLE_NAME = "Cars";
    static final int DATABASE_VERSION = 1;
    static final String CREATE_DB_TABLE = " CREATE TABLE " + TABLE_NAME
            + " (id INTEGER PRIMARY KEY AUTOINCREMENT, "
-           + " name TEXT NOT NULL);";
+           + " fecha TEXT NOT NULL, "
+           + " hora TEXT NOT NULL, "
+           + " ubicacion TEXT NOT NULL, "
+           + " patente TEXT NOT NULL);";
    private static class DatabaseHelper extends SQLiteOpenHelper {
        DatabaseHelper(Context context) {
            super(context, DATABASE_NAME, null, DATABASE_VERSION);

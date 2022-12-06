@@ -78,7 +78,7 @@
        android:layout_height="wrap_content"
        android:layout_marginLeft="50dp"
        android:onClick="onClickAddDetails"
-       android:text="Add User" />
+       android:text="Agregar Estacionamiento" />
 
    <Button
        android:id="@+id/btnRetrieve"
@@ -86,7 +86,7 @@
        android:layout_height="wrap_content"
        android:layout_marginLeft="50dp"
        android:onClick="onClickShowDetails"
-       android:text="Show Users" />
+       android:text="Ver Estacionamientos" />
 
    <TextView
        android:id="@+id/res"

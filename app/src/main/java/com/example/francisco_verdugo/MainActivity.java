@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btnDatePicker, btnTimePicker;
     EditText txtDate, txtTime;
     private int mYear, mMonth, mDay, mHour, mMinute;
+    public String dateForm = "";
+    public String timeForm = "";
 
     // protected ListView listview;
     // private final ArrayList<String> names = new ArrayList<>();
@@ -115,7 +117,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
     public void onClickAddDetails(View view) {
         ContentValues values = new ContentValues();
-        values.put(DataFlairProvider.name, ((EditText)        findViewById(R.id.txtName)).getText().toString());
+        values.put(DataFlairProvider.patente, ((EditText)        findViewById(R.id.txtName)).getText().toString());
+        values.put(DataFlairProvider.ubicacion, ((EditText)        findViewById(R.id.txtFrom)).getText().toString());
+        values.put(DataFlairProvider.fecha, this.dateForm);
+        values.put(DataFlairProvider.hora, this.timeForm);
+
         getContentResolver().insert(DataFlairProvider.CONTENT_URI, values);
         Toast.makeText(getBaseContext(), "New Record Inserted", Toast.LENGTH_LONG).show();
     }
@@ -127,7 +133,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(cursor.moveToFirst()) {
             StringBuilder strBuild=new StringBuilder();
             while (!cursor.isAfterLast()) {
-                strBuild.append("\n"+cursor.getString(cursor.getColumnIndex("id"))+ "-"+ cursor.getString(cursor.getColumnIndex("name")));
+                strBuild.append("\n"+cursor.getString(
+                    cursor.getColumnIndex("id"))
+                    + "-"+ cursor.getString(cursor.getColumnIndex("patente"))
+                    + "-"+ cursor.getString(cursor.getColumnIndex("ubicacion"))
+                    + "-"+ cursor.getString(cursor.getColumnIndex("hora"))
+                    + "-"+ cursor.getString(cursor.getColumnIndex("fecha"))
+                    );
                 cursor.moveToNext();
             }
             resultView.setText(strBuild);
@@ -195,6 +207,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             Log.i("INFO", "onDateSet "+dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
 
                             txtDate.setText(dayOfMonth + "-" + (monthOfYear + 1) + "-" + year);
+                            dateForm = dayOfMonth + "-" + (monthOfYear + 1) + "-" + year;
 
                         }
                     }, mYear, mMonth, mDay);
@@ -218,6 +231,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                                 Log.i("INFO", "onTimeSet "+hourOfDay + ":" + minute);
 
                             txtTime.setText(hourOfDay + ":" + minute);
+                            timeForm = hourOfDay + ":" + minute;
                         }
                     }, mHour, mMinute, false);
             timePickerDialog.show();
