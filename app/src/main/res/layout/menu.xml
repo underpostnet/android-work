@@ -3,6 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
+<!--
+  cuando comentas la estructua de un id al compilar no encuentra, setear en ids.xml
     <Button
         android:id="@+id/menu_btn_activity_main"
         android:layout_width="match_parent"
@@ -15,4 +17,11 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:text="@string/activity_main_0" />
+        -->
+    <Button
+        android:id="@+id/login_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:text="Log In View" />
 </LinearLayout>

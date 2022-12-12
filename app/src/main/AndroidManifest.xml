@@ -16,7 +16,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FRANCISCO_VERDUGO">
-        <!-- 
+        <!--
+        <activity
+            android:name=".LogInActivity"
+            android:exported="false" />
         <activity
             android:name=".GfxActivity"
             android:exported="false" />
@@ -35,8 +38,11 @@
         <activity
             android:name=".MainActivity0"
             android:exported="false" />
+              -->
+
+        <!-- .MainActivity -->
         <activity
-            android:name=".MainActivity"
+            android:name=".LogInActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +50,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    -->
+        
+  <!--
         <activity android:name="com.example.francisco_verdugo.MainActivity"
             android:exported="true">
             <intent-filter>
@@ -55,6 +62,7 @@
         <provider
             android:authorities="com.dataflair.contentprovider.UserProvider"
             android:name="com.example.francisco_verdugo.DataFlairProvider"></provider>
+            -->
     </application>
 
 </manifest>

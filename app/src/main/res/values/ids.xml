@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- cuando comentas la estructua de un id al compilar no encuentra y tirar error, esto los setea por defecto -->
+<resources>
+    <item name="menu_btn_activity_main" type="id" />
+    <item name="menu_btn_activity_main_0" type="id" />
+</resources>
